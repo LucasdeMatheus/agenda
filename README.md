@@ -1,6 +1,54 @@
 # agenda
 O intuito projeto é criar uma agenda que possa servir tanto para uso empreserial quanto para uso pessoal.
 
+## Estrutura do Projeto 🗂️
+```
+src/
+└── main/
+    └── java/
+        └── com.myproject.agenda/<br>
+            ├── config/
+            │   └── ConfigCors.java
+            │   → Configurações de CORS para permitir requisições de diferentes origens.
+            │
+            ├── controller/
+            │   ├── AgendaController.java
+            │   ├── ClientController.java
+            │   └── UserController.java
+            │   → Camada responsável por receber requisições HTTP e encaminhá-las para os serviços.
+            │
+            ├── infra/
+            │   └── springdoc/
+            │       ├── DadosTokenJWT.java
+            │       ├── SecurityConfigurations.java
+            │       ├── SecurityFilter.java
+            │       └── TokenService.java
+            │   → Camada de infraestrutura, contendo configurações de segurança e manipulação de tokens JWT.
+            │
+            ├── main/
+            │   └── AgendaApplication.java
+            │   → Classe principal responsável por inicializar a aplicação.
+            │
+            ├── calendar/
+            │   ├── Calendar.java
+            │   └── CalendarRepository.java
+            │   → Entidade de calendário e seu repositório JPA.
+            │
+            ├── client/
+            │   ├── Client.java
+            │   └── ClientRepository.java
+            │   → Entidade de cliente e seu repositório JPA.
+            │
+            ├── event/
+            │   ├── Event.java
+            │   └── EventRepository.java
+            │   → Entidade de evento e seu repositório JPA.
+            │
+            └── user/
+                ├── User.java
+                └── UserRepository.java
+                → Entidade de usuário e seu repositório JPA.
+```
 ## 1 🗂️ Entidades do Sistemas
 
 ### 👤 User
@@ -36,7 +84,7 @@ O intuito projeto é criar uma agenda que possa servir tanto para uso empreseria
   "client_id": "string"
 }
 ```
-### 📚 Calndar
+### 📚 Calendar
 ```json
 {
   "year": 2025,
